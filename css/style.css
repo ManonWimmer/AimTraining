@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+
+body{
+    background-color: #1A1D26;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+h1{
+    background: rgb(54,200,212);
+    background: radial-gradient(circle, rgba(54,200,212,1) 0%, rgba(67,69,163,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#cursor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    color: white;
+    font-size : 15px;  
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+    left: -50%;
+    top: -50%;
+    border-radius: 50%;
+    pointer-events: none;
+    transition-duration: 10ms;
+    transition-timing-function: ease-out;  
+} 
+
+#grille {
+    background-color: black;
+    display: none;  /* Visible : display = flex */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+#gameStats, #textTimeout, #text, #buttonsEnd{
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameParameters, #gameParametersReflexes, #gameParametersSpeed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle{
+    z-index: 500;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    flex-basis: calc(16.66% - 15px); /* 25% = 4 par ligne */
+    margin: 5px;
+    content: '';
+    aspect-ratio: 1 / 1; /* height = width */
+}
+
+.circleReflexes{
+    z-index: 500;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    flex-basis: calc(16.66% - 15px); /* 25% = 4 par ligne */
+    margin: 5px;
+    content: '';
+    aspect-ratio: 1 / 1; /* height = width */
+}
+
+.activatedReflexes{
+    border: 1px solid white;
+    background: rgb(54,200,212);
+    background: radial-gradient(circle, rgba(54,200,212,1) 0%, rgba(67,69,163,1) 100%);
+    animation: apparition 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes apparition {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 13px;
+    margin: 10px auto;
+    background-color: white;
+  }
+
+.circleButton {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: rgb(54,200,212);
+    background: radial-gradient(circle, rgba(54,200,212,1) 0%, rgba(67,69,163,1) 100%);
+    position: absolute;
+    transition: all .5s ease-Out;
+    top: 20px;
+    left: 70px;
+}
+
+.h2Button {
+    color: black;
+    position: relative;
+    transition: all .45s ease-Out;
+    margin: 0px;
+}
+
+.button:hover .circleButton {
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    top: -70px;
+    left: -70px;
+}
+
+.button:hover .h2Button {
+    color: white;
+}
+
+.activated{
+    background: rgb(54,200,212);
+    background: radial-gradient(circle, rgba(54,200,212,1) 0%, rgba(67,69,163,1) 100%);
+    border: 1px solid white;
+}
+
+.desactivated{
+    background-color: black;
+    border: 1px solid black;
+}
+
+h2{
+    font-size: 15px;
+    color: white;
+}
+
+#gameParametersReflexes{
+    display: none;
+}

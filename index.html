@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="cursor">+</div>
+
+    <!--
+    <div id="circlesCanvas" OnClick="CheckClick('fail')">
+        <h2 id="vies">Nombres de vies : X</h2>
+        <div class="circle" OnClick="CheckClick('circle')"></div>
+    </div>-->
+
+    <div id="titreMenu">
+        <h1>Aim Training</h1>
+    </div>
+
+    <div id="text" >
+        <h2 id="textTimeout">Le temps est écoulé !</h2>
+        <h2 id="clickReussis">Nombres de clics réussis : 0</h2>
+        <h2 id="clickFails">Nombres de clics fails: 0</h2>
+        <h2 id="ratio">Taux de réussite : 100%</h2>
+        <h2 id="timer">Timer : 00:00:000</h2>
+        <h2 id="vies">Vies restantes : 3</h2>
+    </div>
+
+    <div id="gameParameters">
+        <h2>Que voulez-vous améliorer ?</h2>
+        <select id="gameMode" onClick="gameModeSelection()">
+            <option value="speed">Rapidité</option>  
+            <option value="reflexes">Réflexes</option>
+          </select>
+        <h2>Nombre de lignes : </h2>
+        <input type="text" id="inputNbrLignes" value="5">
+        <h2>Nombre de colonnes : </h2>
+        <input type="text" id="inputNbrColonnes" value="12">
+    </div>
+
+    <div id="gameParametersSpeed">
+        <h2 id="h2Timer">Timer : </h2>
+        <input type="text" id="inputTimer" value="00:10:000">
+        <button type="button" onClick="startGame()" class="button">
+            <div class="circleButton"></div>
+            <h2 class="h2Button">Commencer</h2>
+        </button>
+    </div>
+
+    <div id="gameParametersReflexes">
+        <h2 id="h2Vies">Nombre de vies : </h2>
+        <input type="text" id="inputVies" value="3">
+        <h2 id="h2TimeBetweenApparition">Temps entre chaque apparition (ms): </h2>
+        <input type="text" id="inputTimeBetweenApparition" value="450">
+        <!-- <h2 id="h2DisparitionTime">Temps avant disparition (sec) : </h2>
+        <input type="text" id="inputDisparitionTime" value="5"> -->
+        </br>
+        <button type="button" onClick="startGameReflexes()" class="button">
+            <div class="circleButton"></div>
+            <h2 class="h2Button">Commencer</h2>
+        </button>
+    </div>
+
+    <div id="buttonsEnd">
+        <button type="button" onClick="restartGameMode()"  class="button">
+            <div class="circleButton"></div>
+            <h2 class="h2Button">Recommencer</h2>
+        </button>
+        <button type="button" onClick="menu()"  class="button">
+            <div class="circleButton"></div>
+            <h2 class="h2Button">Accueil</h2>
+        </button>
+    </div>
+
+    <div id="grille"></div> 
+
+    <script src="js/script.js"></script>
+</body>
+</html>
